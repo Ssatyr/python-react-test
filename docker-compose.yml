@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./test  # Path to your React app directory
+      dockerfile: Dockerfile
+    image: myapp/frontend:latest
+    ports:
+      - "80:3000"  # Ensure you're mapping the correct port
+    networks:
+      - app-network
+
+  backend:
+    build:
+      context: ./backend  # Path to your FastAPI app directory
+      dockerfile: Dockerfile
+    image: myapp/backend:latest
+    ports:
+      - "8000:8000"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
