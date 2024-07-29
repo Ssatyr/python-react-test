@@ -159,4 +159,4 @@ node_modules/
 build/
 dist/
 
-token.json
+backend/token.json
