@@ -33,13 +33,21 @@ The Survey Dashboard is a web application that visualizes survey results using v
 2. Install the dependencies:
 
    ```sh
+   cd frontend
    npm install
+   cd ..
+   cd backend
+   pip3 install requirements.txt
    ```
 
 3. Start the development server:
 
    ```sh
-   npm start
+   cd backend
+   uvicorn main:app --reload
+   cd ..
+   cd frontend
+   npm run dev
    ```
 
 The application will be available at `http://localhost:3000`.
@@ -67,7 +75,7 @@ The application will be available at `http://localhost:3000`.
    - Go to the Credentials page in the API & Services section.
    - Click on "Create Credentials" and select "OAuth 2.0 Client IDs".
    - Configure the consent screen and create the credentials.
-   - Download the JSON file containing your credentials and save it as `credentials.json`.
+   - Download the JSON file containing your credentials and save it in backend folder as `credentials.json`.
 
 5. **Create a Google Form**:
    - Go to [Google Forms](https://forms.google.com/).
