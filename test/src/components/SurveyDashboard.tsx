@@ -103,11 +103,11 @@ const SurveyDashboard: React.FC = () => {
 
       <GroupedBarChart
         questions={firstFourSubQuestions}
-        title="First Set of Subquestions"
+        title={questionTitles[questionTitles.length - 2]}
       />
       <GroupedBarChart
         questions={secondFourSubQuestions}
-        title="Second Set of Subquestions"
+        title={questionTitles[questionTitles.length - 1]}
       />
     </div>
   );
