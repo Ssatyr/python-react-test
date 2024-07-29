@@ -7,6 +7,7 @@ The Survey Dashboard is a web application that visualizes survey results using v
 ## Table of Contents
 
 - [Features](#features)
+- [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Google Cloud Setup](#google-cloud-setup)
 - [Docker Setup](#docker-setup)
@@ -16,18 +17,22 @@ The Survey Dashboard is a web application that visualizes survey results using v
 
 ## Features
 
-- Fetches survey data, possible answers, and question titles from an API.
-- Displays survey results using pie charts for choice-based questions.
-- Displays survey results using bar charts for rating-based questions.
-- Groups and displays subquestion results using grouped bar charts.
-- Provides an accordion interface for easy navigation of survey questions.
+- Fetches survey data from a Google Form
+- Displays survey results using charts
+- Provides a responsive design
+
+## Prerequisites
+
+- Node.js
+- Python 3.7+
+- Docker (optional, for containerization)
 
 ## Installation
 
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/your-username/survey-dashboard.git
+   git clone https://github.com/Ssatyr/survey-dashboard.git
    cd survey-dashboard
    ```
 
@@ -41,7 +46,11 @@ The Survey Dashboard is a web application that visualizes survey results using v
    pip3 install requirements.txt
    ```
 
-3. Start the development server:
+3. Set Up Credentials:
+
+   - Place the downloaded OAuth 2.0 credentials JSON file in the backend directory and rename it to credentials.json.
+
+4. Start the development server:
 
    ```sh
    cd backend
