@@ -31,7 +31,7 @@ The Survey Dashboard is a web application that visualizes survey results using v
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/Ssatyr/survey-dashboard.git
+   git clone https://github.com/Ssatyr/python-react-test.git
    cd survey-dashboard
    ```
 
@@ -49,7 +49,11 @@ The Survey Dashboard is a web application that visualizes survey results using v
 
    - Place the downloaded OAuth 2.0 credentials JSON file in the backend directory and rename it to credentials.json.
 
-4. Start the development server:
+4. Set Up Form ID:
+
+   - Copy your form ID and paste in main.py in 20th line
+
+5. Start the development server:
 
    ```sh
    cd backend
@@ -97,13 +101,15 @@ The application will be available at `http://localhost:3000`.
 
 2. Place the downloaded `credentials.json` file in the `backend` directory.
 
-3. Build the Docker images:
+3. Paste your form ID in main.py.
+
+4. Build the Docker images:
 
    ```sh
    docker-compose build
    ```
 
-4. Start the Docker containers:
+5. Start the Docker containers:
 
    ```sh
    docker-compose up
