@@ -1,4 +1,5 @@
 import React from "react";
+// @ts-ignore
 import { Pie, Bar } from "react-chartjs-2";
 import { SurveyResponse, PossibleAnswer } from "../types";
 

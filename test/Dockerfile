@@ -13,8 +13,5 @@ RUN npm install
 # Copy the rest of the application code into the container
 COPY . .
 
-# Build the app for production
-RUN npm run build
-
 # Command to run the application
 CMD ["npm", "run", "dev"]
