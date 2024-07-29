@@ -13,7 +13,6 @@ The Survey Dashboard is a web application that visualizes survey results using v
 - [Docker Setup](#docker-setup)
 - [Usage](#usage)
 - [Project Structure](#project-structure)
-- [Dependencies](#dependencies)
 
 ## Features
 
@@ -151,29 +150,15 @@ backend/src/
 ## Components
 
 - SurveyDashboard.tsx: Main dashboard component that fetches data and renders the survey results.
-- QuestionAccordion.tsx: Component for rendering each survey question in an accordion.
-- PieChartComponent.tsx: Component for rendering pie charts.
-- BarChartComponent.tsx: Component for rendering bar charts.
-- GroupedBarChartComponent.tsx: Component for rendering grouped bar charts.
+- AccordionItem.tsx: Component for rendering each survey question in an accordion.
+- GroupedBarChart.tsx: Component for rendering grouped bar charts.
 
 ## Services
 
 - api.ts: Contains functions for fetching survey data, possible answers, and question titles from the API.
-
-## Types
-
-- main.ts: Contains TypeScript interfaces used throughout the project.
 
 ## Main Entry
 
 - App.tsx: Main application component.
 - index.tsx: Renders the main application component.
 - index.css: Global styles for the application.
-
-## Dependencies
-
-- React
-- Chart.js
-- React-Chartjs-2
-- Axios
-- Bootstrap
