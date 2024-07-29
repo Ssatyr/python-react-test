@@ -14,33 +14,70 @@ const GroupedBarChart: React.FC<GroupedBarChartProps> = ({
 }) => {
   const getGroupedBarChartData = (questions: SurveyResponse[]) => {
     const labels = questions.map((q) => q.question);
-    const datasets = questions[0].answers.map((_, idx) => ({
-      label: `${idx + 1}`,
-      data: questions.map((q) => parseInt(q.answers[idx], 10)),
-      backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0", "#9966FF"][
-        idx % 5
-      ],
-    }));
 
-    return {
-      labels,
-      datasets,
-    };
+    // Determine if answers are numerical or textual
+    const isNumerical = !isNaN(parseInt(questions[0].answers[0], 10));
+
+    if (isNumerical) {
+      const datasets = questions[0].answers.map((_, idx) => ({
+        label: `${idx + 1}`,
+        data: questions.map((q) => parseInt(q.answers[idx], 10)),
+        backgroundColor: [
+          "#FF6384",
+          "#36A2EB",
+          "#FFCE56",
+          "#4BC0C0",
+          "#9966FF",
+        ][idx % 5],
+      }));
+
+      return {
+        labels,
+        datasets,
+      };
+    } else {
+      const answerOptions = Array.from(
+        new Set(questions.flatMap((q) => q.answers))
+      );
+
+      const datasets = answerOptions.map((option, idx) => ({
+        label: option,
+        data: questions.map(
+          (q) => q.answers.filter((answer) => answer === option).length
+        ),
+        backgroundColor: [
+          "#FF6384",
+          "#36A2EB",
+          "#FFCE56",
+          "#4BC0C0",
+          "#9966FF",
+        ][idx % 5],
+      }));
+
+      return {
+        labels,
+        datasets,
+      };
+    }
   };
 
   return (
-    <div>
-      <h2 className="mt-4">{title}</h2>
-      <Bar
-        data={getGroupedBarChartData(questions)}
-        options={{
-          scales: {
-            y: {
-              beginAtZero: true,
+    <div className="chart-container">
+      <h2 className="mt-4 text-center">{title}</h2>
+      <div className="chart-wrapper">
+        <Bar
+          data={getGroupedBarChartData(questions)}
+          options={{
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: {
+                beginAtZero: true,
+              },
             },
-          },
-        }}
-      />
+          }}
+        />
+      </div>
     </div>
   );
 };
