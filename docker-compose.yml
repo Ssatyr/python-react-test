@@ -3,7 +3,7 @@ version: '3.8'
 services:
   frontend:
     build:
-      context: ./test  # Path to your React app directory
+      context: ./frontend  # Path to your React app directory
       dockerfile: Dockerfile
     image: myapp/frontend:latest
     ports:
