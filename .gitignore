@@ -160,3 +160,4 @@ build/
 dist/
 
 backend/token.json
+backend/credentials.json
