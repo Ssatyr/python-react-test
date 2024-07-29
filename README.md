@@ -9,6 +9,7 @@ The Survey Dashboard is a web application that visualizes survey results using v
 - [Features](#features)
 - [Installation](#installation)
 - [Google Cloud Setup](#google-cloud-setup)
+- [Docker Setup](#docker-setup)
 - [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Dependencies](#dependencies)
@@ -82,23 +83,41 @@ The application will be available at `http://localhost:3000`.
    - Create a new form or use an existing one.
    - Get the Form ID from the form's URL. It is the long string after `/d/` in the form URL (e.g., `https://docs.google.com/forms/d/your-form-id/edit`).
 
+## Docker Setup
+
+1. Ensure you have Docker and Docker Compose installed on your machine.
+
+2. Place the downloaded `credentials.json` file in the `backend` directory.
+
+3. Build the Docker images:
+
+   ```sh
+   docker-compose build
+   ```
+
+4. Start the Docker containers:
+
+   ```sh
+   docker-compose up
+   ```
+
+The application will be available at `http://localhost:3000`.
+
 ## Usage
 
 1. Ensure your API server is running and accessible.
 2. Open the application in your browser by navigating to `http://localhost:3000`.
-3. Browse through the survey questions and view the visualized results.
+3. View the visualized results.
 
 ## Project Structure
 
 ```plaintext
-src/
+frontend/src/
 │
 ├── components/
 │   ├── SurveyDashboard.tsx
-│   ├── QuestionAccordion.tsx
-│   ├── PieChartComponent.tsx
-│   ├── BarChartComponent.tsx
-│   ├── GroupedBarChartComponent.tsx
+│   ├── AccordionItem.tsx
+│   ├── GroupedBarChart.tsx
 │
 ├── services/
 │   └── api.ts
@@ -107,8 +126,17 @@ src/
 │   └── index.ts
 │
 ├── App.tsx
-├── index.tsx
+├── main.tsx
 └── index.css
+
+
+backend/src/
+│
+├── credential_handler.py
+├── form.py
+├── main.py
+├── credentials.json
+└── Dockerfile
 ```
 
 ## Components
