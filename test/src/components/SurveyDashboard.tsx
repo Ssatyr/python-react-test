@@ -77,7 +77,7 @@ const SurveyDashboard: React.FC = () => {
   const secondFourSubQuestions = surveyData.slice(-4);
 
   return (
-    <div className="container my-4">
+    <div className="container">
       <h1 className="text-center mb-4">Survey Results</h1>
       <div className="accordion" id="surveyAccordion">
         {surveyData.slice(0, -8).map((item, index) => {
